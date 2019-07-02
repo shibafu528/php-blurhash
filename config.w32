@@ -1,0 +1,7 @@
+ARG_ENABLE('blurhash', 'blurhash support', 'no');
+
+if (PHP_BLURHASH != 'no') {
+	AC_DEFINE('HAVE_BLURHASH', 1, 'blurhash support enabled');
+
+	EXTENSION('blurhash', 'blurhash.c encode.c', null, '/DZEND_ENABLE_STATIC_TSRMLS_CACHE=1');
+}
